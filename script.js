@@ -1,16 +1,23 @@
+// DOM elements
 const inpEl = document.querySelector("#inp-el")
 const inpBtn = document.querySelector("#inp-btn")
 const tabBtn = document.querySelector("#tab-btn")
 const delBtn = document.querySelector("#del-btn")
 const ulEl = document.querySelector("#ul-el")
 
+
+// Initialize app
 let leads = getLocalStorage()
 renderUl()
 
+
+// Event listeners
 inpBtn.addEventListener("click", () => { saveInput() })
 tabBtn.addEventListener("click", () => { saveTab() })
 delBtn.addEventListener("dblclick", () => { clearLeads() })
 
+
+// Functions
 function saveInput() {
   let lead = inpEl.value
   inpEl.value = ""
@@ -49,6 +56,7 @@ function renderUl() {
   });
   ulEl.innerHTML = leadsList
 }
+
 
 // Local storage
 function updateLocalStorage() {
